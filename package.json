@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "next build && node -e \"require('fs').copyFileSync('staticwebapp.config.json','out/staticwebapp.config.json')\" && swa deploy ./out --env production --app-name d8a-pro-website --resource-group rg-d8apro --subscription-id e0fbce44-22e5-4b1a-a453-d77c3de6e098"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
