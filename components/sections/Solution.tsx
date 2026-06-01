@@ -33,8 +33,13 @@ const DiscoverDemo = dynamic(() => import("@/components/demos/DiscoverDemo").the
   ssr: false,
   loading: DemoPlaceholder,
 });
+const ContextDemo = dynamic(() => import("@/components/demos/ContextDemo").then((m) => m.ContextDemo), {
+  ssr: false,
+  loading: DemoPlaceholder,
+});
 
 const demos: Record<string, React.ComponentType> = {
+  context: ContextDemo,
   chat: ChatDemo,
   blueprint: BlueprintDemo,
   kanban: KanbanDemo,
@@ -48,11 +53,11 @@ export function Solution() {
       <div className="mb-16 text-center">
         <SectionEyebrow>How it works</SectionEyebrow>
         <SectionHeading>
-          One workspace. Full lifecycle. AI + humans.
+          One operating model workspace. Full lifecycle. AI + humans.
         </SectionHeading>
       </div>
 
-      <div className="space-y-24">
+      <div className="space-y-32 lg:space-y-40">
         {SOLUTION_BLOCKS.map((block, i) => {
           const isReversed = i % 2 === 1;
           const DemoComponent = demos[block.demoType];

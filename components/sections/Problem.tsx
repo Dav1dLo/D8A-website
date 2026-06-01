@@ -20,7 +20,7 @@ export function Problem() {
       <div className="mb-12 text-center">
         <SectionEyebrow>The problem</SectionEyebrow>
         <SectionHeading>
-          Data teams are drowning in process, not engineering
+          Data teams are drowning, instead of shipping
         </SectionHeading>
       </div>
 

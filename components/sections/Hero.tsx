@@ -23,7 +23,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden px-6 pt-20 pb-16"
+      className="relative flex min-h-[88dvh] flex-col items-center justify-center overflow-hidden px-6 pt-20 pb-8"
     >
       {/* Dot grid background */}
       <div className="dot-grid pointer-events-none absolute inset-0" />
@@ -44,18 +44,22 @@ export function Hero() {
             {/* Headline */}
             <motion.h1
               {...anim(0.2)}
-              className="mb-5 text-[2.25rem] font-semibold leading-[1.1] tracking-[-0.025em] text-brand-black md:text-[3.5rem]"
+              className="mb-5 w-fit mx-auto text-[2.25rem] font-semibold leading-[1.1] tracking-[-0.025em] text-brand-black md:text-[3.5rem] lg:mx-0"
             >
-              From data request to production code.
-              <br />
-              <span className="text-brand-muted">
-                Orchestrated by AI. Validated by you.
+              <span className="block text-justify [text-align-last:justify]">
+                The Data Operation
+              </span>
+              <span className="block text-justify [text-align-last:justify]">
+                Model Workspace.
+              </span>
+              <span className="block text-justify text-brand-muted text-[1.625rem] [text-align-last:justify] md:text-[2.5rem]">
+                Full lifecycle. AI + Humans.
               </span>
             </motion.h1>
 
             {/* Subheadline */}
             <motion.p
-              {...anim(0.4)}
+              {...anim(0.5)}
               className="mb-8 max-w-2xl text-[1.0625rem] leading-relaxed tracking-[-0.006em] text-brand-medium lg:max-w-xl"
             >
               {HERO.subheadline}

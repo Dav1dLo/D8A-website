@@ -9,9 +9,10 @@ export const NAV_LINKS = [
 
 export const HERO = {
   eyebrow: "Early access \u2014 limited spots available",
-  headline: "From data request to production code.\nOrchestrated by AI. Validated by you.",
+  headline: "The Data Operation Model Workspace.\nFull lifecycle. AI + Humans.",
+  subheadlineLead: "Stop drowning in data.\nStart shipping data.",
   subheadline:
-    "D8A.pro is the DataOps workspace where AI agents draft specifications, generate code from your patterns, review against your standards, and merge \u2014 with humans in the loop at every step.",
+    "D8A.pro is the Data Operating model workspace. Context is the new king. Architecture drives code. Turning vague requests into precise specifications. Specifications are the new code. AI Generated, Human curated.",
   ctaLabel: "Join the Waitlist \u2192",
   socialProof: `Join ${WAITLIST_COUNT} data leaders already on the waitlist`,
   trustBadges: [
@@ -54,6 +55,18 @@ export const PROBLEM_CARDS = [
 export const SOLUTION_BLOCKS = [
   {
     step: "01",
+    heading: "Context is the new king",
+    body: "AI is only as good as the context you give it. D8A.pro captures a living specification for every table, model, and pattern in your platform — drafted by AI from your live schema and lineage, then curated by your team. With clear architecture patterns and well-defined business requirements as ground truth, this shared context aligns every step that follows.",
+    bullets: [
+      "AI generated: specs inferred automatically from your real tables, types, and lineage",
+      "Human curated: your team reviews, corrects, and approves — context you can trust",
+      "Strongest when architecture patterns and business requirements are explicit",
+      "One source of truth that keeps specs, code, review, and discovery aligned",
+    ],
+    demoType: "context" as const,
+  },
+  {
+    step: "02",
     heading: "Your architecture drives the code",
     body: "Define your data platform\u2019s layers, technologies, and patterns once in the Blueprint. Every piece of generated code follows your standards \u2014 because the AI reads your playbook, not a generic one.",
     bullets: [
@@ -65,7 +78,7 @@ export const SOLUTION_BLOCKS = [
     demoType: "blueprint" as const,
   },
   {
-    step: "02",
+    step: "03",
     heading: "Turn vague requests into precise specifications",
     body: "Business users describe what they need in plain language. The AI conducts a structured interview, asks the right questions, and produces a complete technical specification \u2014 linked to your data architecture and existing patterns.",
     bullets: [
@@ -77,7 +90,7 @@ export const SOLUTION_BLOCKS = [
     demoType: "chat" as const,
   },
   {
-    step: "03",
+    step: "04",
     heading: "Specs and code that never drift apart",
     body: "Edit a specification \u2014 AI proposes the code changes. Edit the code \u2014 AI updates the spec to match. Every save runs validation. No more specs that lie about what the code actually does.",
     bullets: [
@@ -89,7 +102,7 @@ export const SOLUTION_BLOCKS = [
     demoType: "editor" as const,
   },
   {
-    step: "04",
+    step: "05",
     heading: "Automate every step \u2014 or just the ones you choose",
     body: "Each Kanban column has an automation toggle: let the AI agent handle it fully, have the agent work with human validation, or keep it manual. Mix and match per column, per work item.",
     bullets: [
@@ -101,7 +114,7 @@ export const SOLUTION_BLOCKS = [
     demoType: "kanban" as const,
   },
   {
-    step: "05",
+    step: "06",
     heading: "Discover the use cases you’re missing",
     body: "D8A.pro reads your live data architecture and surfaces high-value use cases you haven’t built yet — ranked by business impact and feasibility, and filtered to what fits your data strategy and your role. One click turns a suggestion into a spec with tasks.",
     bullets: [
