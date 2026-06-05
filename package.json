@@ -9,6 +9,8 @@
     "deploy": "next build && node -e \"require('fs').copyFileSync('staticwebapp.config.json','out/staticwebapp.config.json')\" && swa deploy ./out --env production --app-name d8a-pro-website --resource-group rg-d8apro --subscription-id e0fbce44-22e5-4b1a-a453-d77c3de6e098"
   },
   "dependencies": {
+    "@dicebear/collection": "^9.4.2",
+    "@dicebear/core": "^9.4.2",
     "@hookform/resolvers": "^5.2.2",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",

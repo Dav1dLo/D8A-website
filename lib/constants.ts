@@ -9,7 +9,7 @@ export const NAV_LINKS = [
 
 export const HERO = {
   eyebrow: "Early access \u2014 limited spots available",
-  headline: "The Data Operation Model Workspace.\nFull lifecycle. AI + Humans.",
+  headline: "The Data Operating Model Workspace.\nFull lifecycle. AI + Humans.",
   subheadlineLead: "Stop drowning in data.\nStart shipping data.",
   subheadline:
     "D8A.pro is the Data Operating model workspace. Context is the new king. Architecture drives code. Turning vague requests into precise specifications. Specifications are the new code. AI Generated, Human curated.",

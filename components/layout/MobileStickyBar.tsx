@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 
 export function MobileStickyBar() {
+  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
@@ -42,6 +44,8 @@ export function MobileStickyBar() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
+
+  if (pathname?.startsWith("/alternative")) return null;
 
   return (
     <AnimatePresence>

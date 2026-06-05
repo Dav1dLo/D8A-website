@@ -47,7 +47,7 @@ export function Hero() {
               className="mb-5 w-fit mx-auto text-[2.25rem] font-semibold leading-[1.1] tracking-[-0.025em] text-brand-black md:text-[3.5rem] lg:mx-0"
             >
               <span className="block text-justify [text-align-last:justify]">
-                The Data Operation
+                The Data Operating
               </span>
               <span className="block text-justify [text-align-last:justify]">
                 Model Workspace.

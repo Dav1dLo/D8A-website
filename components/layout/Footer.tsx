@@ -1,8 +1,14 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { Logo } from "@/components/icons/Logo";
 import { LinkedinIcon, XIcon } from "@/components/icons/SocialIcons";
 import { FOOTER } from "@/lib/constants";
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/alternative")) return null;
+
   return (
     <footer className="bg-brand-black text-white">
       <div className="mx-auto max-w-[1200px] px-6 py-16">

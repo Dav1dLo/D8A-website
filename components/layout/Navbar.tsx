@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/icons/Logo";
@@ -8,6 +9,7 @@ import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/cn";
 
 export function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [pastHero, setPastHero] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -58,6 +60,8 @@ export function Navbar() {
       window.scrollTo({ top, behavior: "smooth" });
     }
   };
+
+  if (pathname?.startsWith("/alternative")) return null;
 
   return (
     <>
