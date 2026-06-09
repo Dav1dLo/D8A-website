@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, Loader2, Copy } from "lucide-react";
 import { LinkedinIcon, XIcon } from "@/components/icons/SocialIcons";
 import { waitlistSchema, type WaitlistFormData } from "@/lib/validation";
-import { WAITLIST_COUNT } from "@/lib/constants";
+import { WAITLIST_COUNT, WEB3FORMS_ACCESS_KEY } from "@/lib/constants";
 import { cn } from "@/lib/cn";
 
 export function WaitlistForm({
@@ -27,10 +27,33 @@ export function WaitlistForm({
     resolver: zodResolver(waitlistSchema),
   });
 
-  const onSubmit = async () => {
+  const onSubmit = async (data: WaitlistFormData) => {
     setStatus("loading");
-    await new Promise((r) => setTimeout(r, 1200));
-    setStatus("success");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          // Web3Forms uses `email` as the reply-to, so replies go to the signup.
+          email: data.email,
+          subject: "New D8A.pro waitlist signup",
+          from_name: "D8A.pro Waitlist",
+          message: `New waitlist signup: ${data.email}`,
+        }),
+      });
+      const result = await res.json();
+      if (result.success) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const copyReferralLink = async () => {
@@ -197,6 +220,21 @@ export function WaitlistForm({
           role="alert"
         >
           {errors.email.message}
+        </p>
+      )}
+      {status === "error" && (
+        <p
+          className={cn(
+            "mt-2 text-sm",
+            isDark ? "text-red-300" : "text-red-500"
+          )}
+          role="alert"
+        >
+          Something went wrong. Please try again or email{" "}
+          <a href="mailto:david.loos@plainsight.pro" className="underline">
+            david.loos@plainsight.pro
+          </a>
+          .
         </p>
       )}
     </form>

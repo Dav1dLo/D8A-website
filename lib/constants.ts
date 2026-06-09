@@ -1,5 +1,15 @@
 export const WAITLIST_COUNT = 41;
 
+// Web3Forms access key — powers the real waitlist signup email.
+// Get a free key at https://web3forms.com by entering david.loos@plainsight.pro
+// (that address becomes the fixed recipient of every signup notification).
+// This key is PUBLIC by design: it only authorizes sending to that one address,
+// so it is safe to commit and ship in client-side code.
+// Optionally override at build time with NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY.
+export const WEB3FORMS_ACCESS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ??
+  "acc0fba2-41f5-4793-a609-41e63f1ef29a";
+
 export const NAV_LINKS = [
   { label: "Features", href: "#features" },
   { label: "How It Works", href: "#how-it-works" },
