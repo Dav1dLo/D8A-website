@@ -16,7 +16,7 @@
 const LAYERS = [0, 1, 2]; // three generic Data Layers
 const PATTERNS = [0, 1]; // two generic Data Patterns per layer
 
-const INSTRUCTIONS = ["Context", "Spec", "Coding"];
+const INSTRUCTIONS = ["Spec", "Code", "Output", "Context"];
 
 function Pattern() {
   return (

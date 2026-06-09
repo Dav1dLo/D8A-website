@@ -125,11 +125,11 @@ Architecture  (one unified truth that drives the code)
 └─ Data Platform
    └─ Data Layer        ×3   — Bronze·raw / Silver·refined / Gold·curated
       └─ Data Pattern   ×2 per layer
-         └─ agentic instructions:  Context · Spec · Coding
+         └─ agentic instructions (in order):  Spec · Code · Output · Context
 ```
 
-- 3 layers × 2 patterns = 6 patterns; every pattern carries the same **three agentic instruction
-  types** (Context / Spec / Coding), so every action follows one consistent pattern.
+- 3 layers × 2 patterns = 6 patterns; every pattern carries the same **four agentic instruction
+  types** (Spec / Code / Output / Context), so every action follows one consistent pattern.
 - Example patterns: Batch ingest, Streaming/CDC (Bronze); Cleanse & conform, History/SCD (Silver);
   Dimensional model, Aggregates & metrics (Gold).
 - **Marketplace** = supply dock (pill, top-right of the panel) that stocks patterns with
