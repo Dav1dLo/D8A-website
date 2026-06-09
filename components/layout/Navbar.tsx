@@ -109,35 +109,50 @@ export function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:block">
-            {pastHero ? (
-              <motion.button
-                initial={shouldReduceMotion ? false : { opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.2 }}
-                onClick={() => scrollTo("#hero")}
-                className="rounded-md bg-brand-black px-4 py-2 text-[0.875rem] font-medium text-white transition-all hover:scale-[1.02] hover:bg-brand-dark"
-              >
-                Join the Waitlist
-              </motion.button>
-            ) : (
-              <div className="w-[140px]" />
-            )}
+          <div className="hidden items-center gap-3 md:flex">
+            <a
+              href="https://app.d8a.pro"
+              className="rounded-md border border-brand-border px-4 py-2 text-[0.875rem] font-medium text-brand-black transition-all hover:scale-[1.02] hover:bg-brand-lighter-bg"
+            >
+              Log in
+            </a>
+            <AnimatePresence>
+              {pastHero && (
+                <motion.button
+                  initial={shouldReduceMotion ? false : { opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  onClick={() => scrollTo("#hero")}
+                  className="rounded-md bg-brand-black px-4 py-2 text-[0.875rem] font-medium text-white transition-all hover:scale-[1.02] hover:bg-brand-dark"
+                >
+                  Join the Waitlist
+                </motion.button>
+              )}
+            </AnimatePresence>
           </div>
 
-          {/* Mobile hamburger */}
-          <button
-            className="flex h-11 w-11 items-center justify-center rounded-md md:hidden"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileOpen}
-          >
-            {mobileOpen ? (
-              <X className="h-5 w-5 text-brand-black" />
-            ) : (
-              <Menu className="h-5 w-5 text-brand-black" />
-            )}
-          </button>
+          {/* Mobile login + hamburger */}
+          <div className="flex items-center gap-1 md:hidden">
+            <a
+              href="https://app.d8a.pro"
+              className="rounded-md border border-brand-border px-3 py-2 text-[0.875rem] font-medium text-brand-black transition-colors hover:bg-brand-lighter-bg"
+            >
+              Log in
+            </a>
+            <button
+              className="flex h-11 w-11 items-center justify-center rounded-md"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+            >
+              {mobileOpen ? (
+                <X className="h-5 w-5 text-brand-black" />
+              ) : (
+                <Menu className="h-5 w-5 text-brand-black" />
+              )}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -179,7 +194,13 @@ export function Navbar() {
                     {link.label}
                   </button>
                 ))}
-                <div className="mt-4 border-t border-brand-border pt-4">
+                <div className="mt-4 flex flex-col gap-2 border-t border-brand-border pt-4">
+                  <a
+                    href="https://app.d8a.pro"
+                    className="w-full rounded-md border border-brand-border px-4 py-3 text-center text-[0.9375rem] font-medium text-brand-black transition-colors hover:bg-brand-lighter-bg"
+                  >
+                    Log in
+                  </a>
                   <button
                     onClick={() => scrollTo("#hero")}
                     className="w-full rounded-md bg-brand-black px-4 py-3 text-center text-[0.9375rem] font-medium text-white"
