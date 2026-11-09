@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --black: #111827;
-  --dark-gray: #1f2937;
-  --medium-gray: #4b5563;
-  --muted-gray: #6b7280;
-  --light-muted: #9ca3af;
-  --border-gray: #e5e7eb;
-  --light-bg: #f3f4f6;
-  --lighter-bg: #f9fafb;
-  --white: #ffffff;
+  /* Mapped to the D8A brand kit v5.0 so legacy pages (legal) match V2. */
+  --black: #262626;
+  --dark-gray: #2f2f2f;
+  --medium-gray: #2d6fa8;
+  --muted-gray: #6b6b6b;
+  --light-muted: #6b6b6b;
+  --border-gray: #e0e0e0;
+  --light-bg: #ececec;
+  --lighter-bg: #f7f7f7;
+  --white: #f7f7f7;
 }
 
 @theme inline {
@@ -31,13 +32,12 @@
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    scroll-behavior: smooth;
   }
 
   body {
     background: var(--white);
     color: var(--black);
-    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-geist), system-ui, -apple-system, sans-serif;
   }
 
   /* Visible focus ring on all interactive elements */

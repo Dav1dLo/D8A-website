@@ -24,7 +24,7 @@ D8A turns what your business asks for into specs, specs into code on your stack,
 | 03 | **Intelligence**: what to do when | Decision logic tied to your data and processes: rules, ML models, code or agents. | You define the logic and the thresholds. |
 | 04 | **Execution**: governed actions | Actions defined on the ontology (block a customer, update a record, call an API) run only through approved, logged paths. | Actions run with permissions and leave an audit record. |
 
-**Governance** runs across all four: each step leaves a record of who approved what, and when.
+**Governance** runs across all four: you set what runs on its own and what waits for approval, and each step leaves a record of who approved what, and when.
 
 ## Why D8A
 
